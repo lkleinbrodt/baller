@@ -55,7 +55,7 @@ for i, feature_name in enumerate(st.session_state['stat_filters']):
     col_n = (i) % (MAX_COLS)
     with sf_cols[col_n]:
         # TODO: suggested value should be Xth %ile of the REMAINING data
-        # Have to cache data though so that it only does that on the FIRST time the lsider is added
+        # Have to cache data though so that it only does that on the FIRST time the slider is added
         # otherwise it will change values of subsequent sliders when you refresh one slider.
         # suggested_value = df[feature_name].quantile(.90), doesnt work,
         suggested_value = player_data[feature_name].quantile(.75)
@@ -67,7 +67,7 @@ for i, feature_name in enumerate(st.session_state['stat_filters']):
             step=.1
         )
         st.button(
-            'Delete', key=f'delete_filter_{i}', on_click=remove_stat_filter, args=[i])
+            'Remove', key=f'delete_filter_{i}', on_click=remove_stat_filter, args=[i])
 
     df = df[df[feature_name] >= filter_dict[feature_name]]
 

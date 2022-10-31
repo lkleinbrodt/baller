@@ -15,7 +15,7 @@ logging.debug('Start of Program')
 start_year = 2000
 end_year = 2021
 
-base_url = 'https://www.basketball-reerence.com'
+base_url = 'https://www.basketball-reference.com'
 
 # First, get all game ids
 
